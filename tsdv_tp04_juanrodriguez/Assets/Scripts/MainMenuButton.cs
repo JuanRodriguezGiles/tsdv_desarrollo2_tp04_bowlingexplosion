@@ -7,7 +7,7 @@ public class MainMenuButton : MonoBehaviour
 {
     public void LoadScene()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("GameplayBowling");
     }
    
 }
