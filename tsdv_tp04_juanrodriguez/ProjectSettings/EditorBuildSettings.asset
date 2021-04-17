@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f50845aca37af68408f51791c09c506a
+  - enabled: 1
+    path: Assets/Scenes/GameplayBowling.unity
+    guid: f5f808f51443ffa4fb011808be09322e
+  - enabled: 1
+    path: Assets/Scenes/GameplayGun.unity
+    guid: 30c3556c03416db469bb144e9bb7292a
+  - enabled: 1
+    path: Assets/Scenes/ScoreScreen.unity
+    guid: 926a6a743863d9b4a906f8b0e92cb08c
   m_configObjects: {}
