@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("ScoreScreen");
     }
+    public void LoadCreditsSCene()
+    {
+        SceneManager.LoadScene("Credits");
+    }
     #endregion
-
 }
