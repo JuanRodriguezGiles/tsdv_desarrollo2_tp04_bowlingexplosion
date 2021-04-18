@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     void CheckGameOver()
     {
         if (shotsLeft == 0 || pinsLeft == 0)
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("GameOver");
     }
     #region SCENES
     public void LoadBowlingGameplayScene()
