@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PinManager : MonoBehaviour
 {
     GameObject ball;
@@ -17,13 +18,19 @@ public class PinManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        pins = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pin"));
+
+        if (SceneManager.GetActiveScene().name != "GameplayBowling") return;
         ball = GameObject.FindGameObjectWithTag("Ball");
         ballScript = ball.GetComponent<Ball>();
-        pins = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pin"));
     }
     void Update()
     {
-        if (ballScript.rolling || !Input.GetKeyDown(KeyCode.P)) return;
+        if (SceneManager.GetActiveScene().name != "GameplayBowling")
+        {
+            if (!Input.GetKeyDown(KeyCode.P)) return;
+        }
+        else if (ballScript.rolling || !Input.GetKeyDown(KeyCode.P)) return;
 
         foreach (var t in pins)
         {

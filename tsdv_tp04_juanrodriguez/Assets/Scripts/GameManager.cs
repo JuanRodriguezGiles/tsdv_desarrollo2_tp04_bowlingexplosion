@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameObject ballGameObject;
-    bool playing = true;
     public int score = 0;
     public int shotsLeft = 3;
     public int pinsLeft = 10;
