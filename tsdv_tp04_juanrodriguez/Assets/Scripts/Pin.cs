@@ -20,6 +20,7 @@ public class Pin : MonoBehaviour
 
         fallen = true;
         GameManager.Get().score += pinPoints;
+        GameManager.Get().pinsLeft--;
     }
     public void ResetPin()
     {

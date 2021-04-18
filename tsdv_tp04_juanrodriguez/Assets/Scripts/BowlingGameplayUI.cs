@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-public class UI : MonoBehaviour
+public class BowlingGameplayUI : MonoBehaviour
 {
     GameObject ball;
     Ball ballScript;

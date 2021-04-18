@@ -40,10 +40,16 @@ public class GameManager : MonoBehaviour
         ballGameObject.GetComponent<Ball>().ResetBall();
         ballGameObject.GetComponent<Ball>().fallen = false;
         PinManager.Get().DestroyPins();
+        CheckGameOver();
     }
     public void GetBallGameObject()
     {
         ballGameObject = GameObject.FindGameObjectWithTag("Ball");
+    }
+    void CheckGameOver()
+    {
+        if (shotsLeft == 0 || pinsLeft == 0)
+            SceneManager.LoadScene("Credits");
     }
     #region SCENES
     public void LoadBowlingGameplayScene()
