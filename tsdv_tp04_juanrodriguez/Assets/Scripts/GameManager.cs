@@ -73,5 +73,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("CreditsScene");
     }
+    public void LoadMainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     #endregion
 }
