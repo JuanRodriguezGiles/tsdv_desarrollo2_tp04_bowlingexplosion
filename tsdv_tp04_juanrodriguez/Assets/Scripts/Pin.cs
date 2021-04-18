@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class Pin : MonoBehaviour
 {
     Vector3 positionVector3;
@@ -22,6 +24,8 @@ public class Pin : MonoBehaviour
 
         fallen = true;
         GameManager.Get().score += pinPoints;
+
+        if (SceneManager.GetActiveScene().name != "GameplayBowling") return;
         GameManager.Get().pinsLeft--;
     }
     public void ResetPin()
@@ -36,10 +40,9 @@ public class Pin : MonoBehaviour
     }
     public void ExplodePin()
     {
-        //GameManager.Get().score += pinPoints;
+        GameManager.Get().score += pinPoints;
         GetComponent<Rigidbody>().velocity = new Vector3(0, yForce, 0);
         for (short i = 0; i < pinSpawnQuantity; i++)
-            Instantiate(smallPin, transform.position,Quaternion.identity);
-
+            Instantiate(smallPin, transform.position, Quaternion.identity);
     }
 }

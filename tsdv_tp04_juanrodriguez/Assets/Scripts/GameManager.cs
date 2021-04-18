@@ -19,8 +19,13 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (instance != null)
+            Destroy(gameObject);
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
     void Update()
     {
@@ -58,14 +63,15 @@ public class GameManager : MonoBehaviour
     public void LoadGunGameplayScene()
     {
         SceneManager.LoadScene("GameplayGun");
+        shotsLeft = 0;
     }
     public void LoadScoreScreenScene()
     {
-        SceneManager.LoadScene("ScoreScreen");
+        SceneManager.LoadScene("GameOver");
     }
-    public void LoadCreditsSCene()
+    public void LoadCreditsScene()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("CreditsScene");
     }
     #endregion
 }

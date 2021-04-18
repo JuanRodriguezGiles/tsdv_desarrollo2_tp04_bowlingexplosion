@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-public class CreditsUI : MonoBehaviour
+public class ScoreScreenUI : MonoBehaviour
 {
     public TMP_Text gameOverMessage;
     public TMP_Text score;

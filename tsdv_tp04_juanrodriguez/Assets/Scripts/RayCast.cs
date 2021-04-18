@@ -25,7 +25,7 @@ public class RayCast : MonoBehaviour
 
         if (hit.collider.gameObject.tag == "Pin")
             hit.collider.gameObject.GetComponent<Pin>().ExplodePin();
-        //else
-        //gameover  
+        else
+            GameManager.Get().LoadScoreScreenScene();       
     }
 }
