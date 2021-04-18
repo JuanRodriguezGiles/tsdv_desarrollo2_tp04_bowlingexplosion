@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Pin : MonoBehaviour
 {
+    public GameObject smallPin;
     Vector3 positionVector3;
     Vector3 rotationVector3;
     bool fallen = false;
     [SerializeField] int pinPoints = 10;
     [SerializeField] int fallAngle = 45;
-    public float yForce = 1.0f;
     public int pinSpawnQuantity = 10;
-    public GameObject smallPin;
+    public float explosionForce = 500.0f;
+    public float explosionUpForce = 500.0f;
+    public float explosionRaidus = 5.0f;
     void Start()
     {
         positionVector3 = transform.position;
@@ -48,14 +50,14 @@ public class Pin : MonoBehaviour
                 Quaternion.identity);
         }
         Vector3 explosionPos = transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, 100.0f);
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRaidus);
         foreach (Collider hit in colliders)
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
             if (rb != null && rb.gameObject.tag == "PinSmall")
-                rb.AddExplosionForce(500, explosionPos, 100.0f, 500);
+                rb.AddExplosionForce(explosionForce, explosionPos, explosionRaidus, explosionUpForce);
         }
-        GetComponent<Rigidbody>().AddExplosionForce(500, transform.position, 5.0f, 500);
+        GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRaidus, explosionUpForce);
     }
 }
