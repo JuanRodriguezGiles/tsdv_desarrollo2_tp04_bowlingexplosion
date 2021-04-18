@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PinManager : MonoBehaviour
 {
-    public GameObject ball;
-    private Ball ballScript;
-    public List<GameObject> pins;
+    GameObject ball;
+    Ball ballScript;
+    List<GameObject> pins;
 
     private static PinManager instance;
     public static PinManager Get()
@@ -15,6 +15,7 @@ public class PinManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        ball = GameObject.FindGameObjectWithTag("Ball");
         ballScript = ball.GetComponent<Ball>();
         pins = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pin"));
     }

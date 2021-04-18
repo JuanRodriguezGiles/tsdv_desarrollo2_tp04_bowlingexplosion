@@ -4,12 +4,12 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float force = 0f;
+    [SerializeField] float forceNormalizer = 50.0f;
     public bool rolling = false;
     public bool fallen = false;
     Vector3 positionVector3;
     Vector3 rotationVector3;
     float maxSideMovement = 2.0f;
-    [SerializeField] float forceNormalizer = 50.0f;
     void Start()
     {
         positionVector3 = transform.position;
