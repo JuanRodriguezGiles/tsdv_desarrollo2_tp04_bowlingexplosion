@@ -6,6 +6,8 @@ public class PinManager : MonoBehaviour
     GameObject ball;
     Ball ballScript;
     List<GameObject> pins;
+    [SerializeField] Vector3 randomRange = new Vector3(2.0f, 1.2f, 30.0f);
+    [SerializeField] float distBetweenPins = 0.5f;
 
     private static PinManager instance;
     public static PinManager Get()
@@ -28,9 +30,9 @@ public class PinManager : MonoBehaviour
             Vector3 newPosVector3;
             do
             {
-                newPosVector3.x = Random.Range(-2f, 2f);
-                newPosVector3.y = 1.2f;
-                newPosVector3.z = Random.Range(0, 30);
+                newPosVector3.x = Random.Range(-randomRange.x, randomRange.x);
+                newPosVector3.y = randomRange.y;
+                newPosVector3.z = Random.Range(0, randomRange.z);
             } while (!IsPosValid(newPosVector3));
 
             t.transform.position = newPosVector3;
@@ -40,8 +42,8 @@ public class PinManager : MonoBehaviour
     {
         foreach (GameObject pin in pins)
         {
-            if (pos.x >= pin.transform.position.x - 0.5f && pos.x <= pin.transform.position.x + 0.5f && pos.z >= pin.transform.position.z - 0.5f &&
-                pos.z <= pin.transform.position.z + 0.5f)
+            if (pos.x >= pin.transform.position.x - distBetweenPins && pos.x <= pin.transform.position.x + distBetweenPins && pos.z >= pin.transform.position.z - distBetweenPins &&
+                pos.z <= pin.transform.position.z + distBetweenPins)
                 return false;
         }
         return true;
