@@ -15,12 +15,15 @@ public class Pin : MonoBehaviour
     {
         if (Vector3.Angle(transform.up, Vector3.up) > 45)
             fallen = true;
-        if (fallen)
-            Destroy(gameObject);
     }
-    void resetPin()
+    public void ResetPin()
     {
         transform.position = positionVector3;
         transform.rotation.eulerAngles.Set(rotationVector3.x, rotationVector3.y, rotationVector3.z);
+    }
+    public void DestroyPin()
+    {
+        if (fallen)
+            Destroy(gameObject);
     }
 }
