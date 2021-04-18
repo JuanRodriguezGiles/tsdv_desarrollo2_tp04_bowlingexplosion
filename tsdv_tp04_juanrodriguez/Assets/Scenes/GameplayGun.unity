@@ -728,6 +728,7 @@ GameObject:
   - component: {fileID: 2008583345}
   - component: {fileID: 2008583344}
   - component: {fileID: 2008583343}
+  - component: {fileID: 2008583346}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -793,13 +794,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008583342}
-  m_LocalRotation: {x: 0.16037676, y: -0, z: -0, w: 0.9870559}
-  m_LocalPosition: {x: 0, y: 2.24, z: -11}
+  m_LocalRotation: {x: 0.18362895, y: -0, z: -0, w: 0.9829957}
+  m_LocalPosition: {x: 0, y: 5.05, z: 17.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 18.458, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 21.162, y: 0, z: 0}
+--- !u!114 &2008583346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008583342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fd5ebd78132cf45bca41dadbcdd463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2130730020
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +960,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!114 &987960059864993936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,6 +978,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!114 &1441352511902029423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +996,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!114 &1727184579786040045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,6 +1014,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!23 &1729099922866254744
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1115,6 +1144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!114 &2199442564118307418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,6 +1162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!1 &2455137849241193570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1516,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!1 &3392141841631812080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,6 +1982,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!4 &6179984866620764696
 Transform:
   m_ObjectHideFlags: 0
@@ -2067,6 +2112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}
 --- !u!23 &8255518593995013120
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2193,3 +2242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinPoints: 10
   fallAngle: 45
+  yForce: 50
+  pinSpawnQuantity: 10
+  smallPin: {fileID: 4600768043905217693, guid: 9cb3db0a998af024eaae7f45e2844f25,
+    type: 3}

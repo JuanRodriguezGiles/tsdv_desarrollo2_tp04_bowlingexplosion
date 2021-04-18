@@ -8,12 +8,14 @@ public class Pin : MonoBehaviour
     bool fallen = false;
     [SerializeField] int pinPoints = 10;
     [SerializeField] int fallAngle = 45;
+    public float yForce = 1.0f;
+    public int pinSpawnQuantity = 10;
+    public GameObject smallPin;
     void Start()
     {
         positionVector3 = transform.position;
         rotationVector3 = transform.rotation.eulerAngles;
     }
-
     void Update()
     {
         if (!(Vector3.Angle(transform.up, Vector3.up) > fallAngle) || fallen) return;
@@ -31,5 +33,13 @@ public class Pin : MonoBehaviour
     {
         if (fallen)
             Destroy(gameObject);
+    }
+    public void ExplodePin()
+    {
+        //GameManager.Get().score += pinPoints;
+        GetComponent<Rigidbody>().velocity = new Vector3(0, yForce, 0);
+        for (short i = 0; i < pinSpawnQuantity; i++)
+            Instantiate(smallPin, transform.position,Quaternion.identity);
+
     }
 }
