@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Pin : MonoBehaviour
 {
-    private Vector3 positionVector3;
-    private Vector3 rotationVector3;
-    public bool fallen = false;
+    Vector3 positionVector3;
+    Vector3 rotationVector3;
+    bool fallen = false;
+    [SerializeField] int pinPoints = 10;
+    [SerializeField] int fallAngle = 45;
     void Start()
     {
         positionVector3 = transform.position;
         rotationVector3 = transform.rotation.eulerAngles;
     }
+
     void Update()
     {
-        if (Vector3.Angle(transform.up, Vector3.up) > 45)
-            fallen = true;
+        if (!(Vector3.Angle(transform.up, Vector3.up) > fallAngle) || fallen) return;
+
+        fallen = true;
+        GameManager.Get().score += pinPoints;
     }
     public void ResetPin()
     {

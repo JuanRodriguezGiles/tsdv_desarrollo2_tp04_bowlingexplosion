@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameObject ballGameObject;
-    public int score;
     bool playing = true;
-    int shotsLeft = 3;
-    int pinsLeft = 10;
-    [SerializeField] double time = 0;
-    [SerializeField] double timeAtFall = 0;
-
+    public int score = 0;
+    public int shotsLeft = 3;
+    public int pinsLeft = 10;
+    double time = 0;
+    double timeAtFall = 0;
+    [SerializeField] private int resetDelay = 3;
     private static GameManager instance;
     public static GameManager Get()
     {
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         if (timeAtFall == 0)
             timeAtFall = time;
 
-        if (!(time > timeAtFall + 3)) return;
+        if (!(time > timeAtFall + resetDelay)) return;
 
         timeAtFall = 0;
         ballGameObject.GetComponent<Ball>().ResetBall();
