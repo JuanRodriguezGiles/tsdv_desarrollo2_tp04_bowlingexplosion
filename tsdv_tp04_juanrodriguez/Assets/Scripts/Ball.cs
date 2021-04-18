@@ -6,8 +6,10 @@ public class Ball : MonoBehaviour
     public float force = 0f;
     public bool rolling = false;
     public bool fallen = false;
-    private Vector3 positionVector3;
-    private Vector3 rotationVector3;
+    Vector3 positionVector3;
+    Vector3 rotationVector3;
+    float maxSideMovement = 2.0f;
+    [SerializeField] float forceNormalizer = 50.0f;
     void Start()
     {
         positionVector3 = transform.position;
@@ -22,19 +24,19 @@ public class Ball : MonoBehaviour
         {
             rolling = true;
             GetComponent<ConstantForce>().force = new Vector3(0, 0, force);
-            //gameStatusScript.shotsLeft--;
+            GameManager.Get().shotsLeft--;
             return;
         }
 
         float hor = Input.GetAxis("Horizontal");
         Vector3 direction = new Vector3(hor, 0, 0);
         transform.position += direction * Time.deltaTime;
-        if (transform.position.x <= -2f)
-            transform.position = new Vector3(-2, transform.position.y, transform.position.z);
-        if (transform.position.x >= 2f)
-            transform.position = new Vector3(2, transform.position.y, transform.position.z);
+        if (transform.position.x <= -maxSideMovement)
+            transform.position = new Vector3(-maxSideMovement, transform.position.y, transform.position.z);
+        if (transform.position.x >= maxSideMovement)
+            transform.position = new Vector3(maxSideMovement, transform.position.y, transform.position.z);
 
-        force += Input.GetAxis("Vertical") / 50;
+        force += Input.GetAxis("Vertical") / forceNormalizer;
         if (force < 0)
             force = 0;
     }
