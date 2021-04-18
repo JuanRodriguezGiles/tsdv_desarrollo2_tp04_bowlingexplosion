@@ -7,7 +7,7 @@ public class PinManager : MonoBehaviour
     Ball ballScript;
     List<GameObject> pins;
     [SerializeField] Vector3 randomRange = new Vector3(2.0f, 1.2f, 30.0f);
-    [SerializeField] float distBetweenPins = 0.5f;
+    float distBetweenPins = 0.5f;
 
     private static PinManager instance;
     public static PinManager Get()
