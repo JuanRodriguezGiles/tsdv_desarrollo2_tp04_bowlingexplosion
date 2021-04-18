@@ -40,9 +40,22 @@ public class Pin : MonoBehaviour
     }
     public void ExplodePin()
     {
-        GameManager.Get().score += pinPoints;
-        GetComponent<Rigidbody>().velocity = new Vector3(0, yForce, 0);
+        float mod;
         for (short i = 0; i < pinSpawnQuantity; i++)
-            Instantiate(smallPin, transform.position, Quaternion.identity);
+        {
+            mod = i % 2 == 0 ? 0.5f : -0.5f;
+            Instantiate(smallPin, new Vector3(transform.position.x + mod, transform.position.y, transform.position.z),
+                Quaternion.identity);
+        }
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, 100.0f);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+            if (rb != null && rb.gameObject.tag == "PinSmall")
+                rb.AddExplosionForce(500, explosionPos, 100.0f, 500);
+        }
+        GetComponent<Rigidbody>().AddExplosionForce(500, transform.position, 5.0f, 500);
     }
 }

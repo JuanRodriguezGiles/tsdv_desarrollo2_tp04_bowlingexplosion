@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4600768043905217692}
   m_Layer: 0
   m_Name: PinSmall
-  m_TagString: Untagged
+  m_TagString: PinSmall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
