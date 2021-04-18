@@ -12,8 +12,10 @@ public class Pin : MonoBehaviour
         rotationVector3 = transform.rotation.eulerAngles;
     }
     void Update()
-    {//
-        if(fallen)
+    {
+        if (Vector3.Angle(transform.up, Vector3.up) > 45)
+            fallen = true;
+        if (fallen)
             Destroy(gameObject);
     }
     void resetPin()

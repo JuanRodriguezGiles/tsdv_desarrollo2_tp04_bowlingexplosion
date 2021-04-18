@@ -37,7 +37,6 @@ public class PinRandomizer : MonoBehaviour
                 pos.z <= t.transform.position.z + 0.5f)
                 return false;
         }
-
         return true;
     }
 }

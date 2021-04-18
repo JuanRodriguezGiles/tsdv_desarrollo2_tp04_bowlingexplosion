@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int score;
+    public int score;
     bool playing = true;
     int shotsLeft = 3;
     int pinsLeft = 10;
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
     #region SCENES
     public void LoadBowlingGameplayScene()
     {
