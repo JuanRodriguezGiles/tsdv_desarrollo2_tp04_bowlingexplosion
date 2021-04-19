@@ -25,9 +25,8 @@ public class Pin : MonoBehaviour
         if (!(Vector3.Angle(transform.up, Vector3.up) > fallAngle) || fallen) return;
 
         fallen = true;
-        GameManager.Get().score += pinPoints;
-
         if (SceneManager.GetActiveScene().name != "GameplayBowling") return;
+        GameManager.Get().score += pinPoints;
         GameManager.Get().pinsLeft--;
     }
     public void ResetPin()
@@ -43,6 +42,7 @@ public class Pin : MonoBehaviour
     public void ExplodePin()
     {
         float mod;
+        GameManager.Get().score += pinPoints;
         for (short i = 0; i < pinSpawnQuantity; i++)
         {
             mod = i % 2 == 0 ? 0.5f : -0.5f;
